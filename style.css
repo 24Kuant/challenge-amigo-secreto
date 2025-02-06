@@ -91,6 +91,7 @@ body {
 }
 
 .button-container {
+  display: flex;
   width: 300px;
   justify-content: center;
 }
@@ -151,13 +152,28 @@ ul {
   align-items: center;
   width: 100%;
   padding: 10px 40px;
+  margin: 10px 30px;
   color: var(--color-white);
   background-color: var(--color-button);
   font-size: 16px;
 }
 
 .button-draw img {
-  margin-right: 40px;
+  margin-right: 30px;
+}
+
+.button-img-size {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 50px;
+  margin: 10px 30px;
+  color: var(--color-white);
+  background-color: var(--color-button);
+  font-size: 14px;
+}
+.button-img-size img {
+  margin-right: 20px;
 }
 
 .button-draw:hover {

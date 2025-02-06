@@ -5,21 +5,19 @@ let amigosSorteados = [];
 function agregarAmigo() {
   let nombre = document.getElementById("amigo");
   nombreAmigo = nombre.value.toUpperCase().trim();
-  console.log(`nombre amigo = ${nombreAmigo}`);
+  //--console.log(`nombre amigo = ${nombreAmigo}`);
 
   if (validaNombre(nombreAmigo)) {
     asignarTextoElemento("h4", "");
     listadoAmigos.push(nombreAmigo);
     let indice = listadoAmigos.length - 1;
-    console.log(
-      `antes.listadoAmigos[${indice}] = ${listadoAmigos[indice]}. listadoAmigos = ${listadoAmigos}`
-    );
+    //--console.log(`antes.listadoAmigos[${indice}] = ${listadoAmigos[indice]}. listadoAmigos = ${listadoAmigos}`);
     pintaNuevoAmigo("listaAmigos", indice, "**");
-    console.log(`despues. listadoAmigos = ${listadoAmigos}`);
+    //--console.log(`despues. listadoAmigos = ${listadoAmigos}`);
     nombre.value = ""; //limpia el campo donde se captura el nombre del amigo
     limpiaTodosSorteados();
   }
-  console.log(`listadoAmigos = ${listadoAmigos}`);
+  //--console.log(`listadoAmigos = ${listadoAmigos}`);
 }
 
 function validaNombre(nombreAmigo) {
@@ -46,9 +44,7 @@ function sonCaracteresValidos(nombreAmigo) {
   //valida si es una cadena de caracteres = /^[A-Z]+$/i   Referencia: https://es.stackoverflow.com/questions/230177/validar-solo-letras-en-javascript
   // Si queremos agregar letras acentuadas y/o letra ñ debemos usar
   // codigos de Unicode (ejemplo: Ñ: \u00D1  ñ: \u00F1)
-  console.log(
-    `evaluando expresion = ${/^[A-Z|\u00D1| |\u00F1]+$/i.test(nombreAmigo)}`
-  );
+  //--console.log(`evaluando expresion = ${/^[A-Z|\u00D1| |\u00F1]+$/i.test(nombreAmigo)}` );
   return /^[A-Z|\u00D1| |\u00F1]+$/i.test(nombreAmigo); //false= No es una Letra, true = es una letra
 }
 
@@ -65,33 +61,29 @@ function pintaNuevoAmigo(id, indice, textoAdicional) {
         )}] de la lista del amigo secreto?`
       )
     ) {
-      console.log(`li.innerHTML = ${li.innerHTML}`);
+      //--console.log(`li.innerHTML = ${li.innerHTML}`);
       listadoAmigos = listadoAmigos.filter(
         (elAmigo) => elAmigo != li.innerHTML.substring(2)
       );
-      console.log(`El nuevo valor de listadoAmigos = ${listadoAmigos}`);
+      //--console.log(`El nuevo valor de listadoAmigos = ${listadoAmigos}`);
       li.parentNode.removeChild(li); //se usa asi, cuando se pone function () {} this.parentNode.removeChild(this);
 
       var liSorteado = document.createElement("li");
       liSorteado.innerHTML = `**El amigo sorteado es: ${li.innerHTML.substring(
         2
       )}`;
-      console.log(
-        `quitaElementoAmigoSorteado.  liSorteado.innerHTML = ${liSorteado.innerHTML}`
-      );
+      //--console.log( `quitaElementoAmigoSorteado.  liSorteado.innerHTML = ${liSorteado.innerHTML}` );
       //quitaElementoAmigoSorteado(liSorteado);
       amigosSorteados = amigosSorteados.filter(
         (elAmigo) => elAmigo != liSorteado.innerHTML.substring(24) //**El amigo sorteado es:   son las primeras 24 posiciones antes del nombre
       );
-      console.log(`El nuevo valor de amigosSorteados = ${amigosSorteados}`);
+      //--console.log(`El nuevo valor de amigosSorteados = ${amigosSorteados}`);
       //liSorteado.remove(); //li.parentNode.removeChild(liSorteado);
 
       var ul = document.getElementById("resultado");
       var items = ul.children;
       for (i = 0; i < items.length; i++) {
-        console.log(
-          `Elemento lista amigos sorteados items[${i}] = ${items[i].innerHTML}`
-        );
+        //--console.log( `Elemento lista amigos sorteados items[${i}] = ${items[i].innerHTML}` );
         if (items[i].innerHTML === liSorteado.innerHTML) {
           items[i].parentNode.removeChild(items[i]);
           break;
@@ -105,9 +97,7 @@ function pintaNuevoAmigo(id, indice, textoAdicional) {
 }
 
 function limpiaTodosSorteados() {
-  console.log(
-    `amigosSorteados.length = ${amigosSorteados.length}, listadoAmigos.length = ${listadoAmigos.length}`
-  );
+  //--console.log(`amigosSorteados.length = ${amigosSorteados.length}, listadoAmigos.length = ${listadoAmigos.length}`);
   if (amigosSorteados.length < listadoAmigos.length) {
     asignarTextoElemento("p", "");
   }
@@ -126,13 +116,11 @@ function amigoSorteado() {
       );
     }
   }
-  console.log(`amigosSorteados = ${amigosSorteados}`);
+  //--console.log(`amigosSorteados = ${amigosSorteados}`);
 }
 
 function sortearAmigo() {
-  console.log(
-    `amigosSorteados.length = ${amigosSorteados.length} listadoAmigos.length = ${listadoAmigos.length}`
-  );
+  //--console.log( `amigosSorteados.length = ${amigosSorteados.length} listadoAmigos.length = ${listadoAmigos.length}` );
   //Si ya sorteamos a todos los amigos
   if (amigosSorteados.length == listadoAmigos.length) {
     asignarTextoElementoById(
@@ -143,14 +131,12 @@ function sortearAmigo() {
   } else {
     let indiceAmigoSorteado = Math.floor(Math.random() * listadoAmigos.length); //No le agrega el  + 1, porque los indices de un arreglo van de cero a n-1;
     if (!amigosSorteados.includes(listadoAmigos[indiceAmigoSorteado])) {
-      console.log(
-        `listadoAmigos[${indiceAmigoSorteado}] = ${listadoAmigos[indiceAmigoSorteado]}`
-      );
+      //--console.log( `listadoAmigos[${indiceAmigoSorteado}] = ${listadoAmigos[indiceAmigoSorteado]}` );
       amigosSorteados.push(listadoAmigos[indiceAmigoSorteado]);
       return amigosSorteados.length - 1; //siempre regresa el ultimo elemento, ya que se acaba de agregar. //indiceAmigoSorteado;
     } else {
       //el amigo ya ha sido sorteado, sortea a otro amigo
-      console.log("El amigo ya ha sido sorteado, sortea a otro amigo");
+      //--console.log("El amigo ya ha sido sorteado, sortea a otro amigo");
       return sortearAmigo();
     }
   }
@@ -162,7 +148,7 @@ function pintaAmigoSorteado(id, indice, textoAdicional) {
   let li = document.createElement("li");
   li.innerHTML = obtenAmigo == "" ? "(nada)" : textoAdicional + obtenAmigo;
   li.onclick = () => {
-    console.log(`dentro. li = ${li}, li.innerHTML = ${li.innerHTML}`);
+    //--console.log(`dentro. li = ${li}, li.innerHTML = ${li.innerHTML}`);
     quitaElementoAmigoSorteado(li);
   };
 
@@ -171,13 +157,13 @@ function pintaAmigoSorteado(id, indice, textoAdicional) {
 }
 
 function quitaElementoAmigoSorteado(li) {
-  console.log(`li = ${li}, li.innerHTML = ${li.innerHTML}`);
+  //--console.log(`li = ${li}, li.innerHTML = ${li.innerHTML}`);
   if (confirm(`¿${li.innerHTML.substring(2)}, desea borrarlo de la lista?`)) {
-    console.log(`li.innerHTML = ${li.innerHTML}`);
+    //--console.log(`li.innerHTML = ${li.innerHTML}`);
     amigosSorteados = amigosSorteados.filter(
       (elAmigo) => elAmigo != li.innerHTML.substring(24) //**El amigo sorteado es:   son las primeras 24 posiciones antes del nombre
     );
-    console.log(`El nuevo valor de amigosSorteados = ${amigosSorteados}`);
+    //--console.log(`El nuevo valor de amigosSorteados = ${amigosSorteados}`);
     li.parentNode.removeChild(li);
   }
 }
@@ -229,7 +215,5 @@ function reiniciar() {
 
   borrarLista("listaAmigos"); //tiene que darle click a cada elemento de la lista para que lo quite
   borrarLista("resultado"); //tiene que darle click a cada elemento de la lista para que lo quite
-  console.log(
-    `Valores.Iniciales. listadoAmigos = ${listadoAmigos}, amigosSorteados = ${amigosSorteados}`
-  );
+  //--console.log( `Valores.Iniciales. listadoAmigos = ${listadoAmigos}, amigosSorteados = ${amigosSorteados}`);
 }
