@@ -16,7 +16,7 @@ El juego del amigo secreto, te permite ingresar una lista de amigos y poder gene
  
 🟢¿ Quiéres jugar ?** inicia aquí:  <a href="https://24kuant.github.io/challenge-amigo-secreto/"> Amigo Secreto </a>
  
-- **Fácil de usar:**  Mira este  <a href="https://24kuant.github.io/challenge-amigo-secreto/">vídeo</a> y sabrás como usar el juego.
+- **Fácil de usar:**  Mira este  <a href="https://github.com/24Kuant/challenge-amigo-secreto/blob/main/assets/video/uso-de-amigo-secreto.webm">vídeo</a> y sabrás como usar el juego.
   
 >🔶 Paso 1. Teclea uno a uno los nombres de tus amigos que participarán en el amigo secreto. Con el bóton <b>Añadir</b> se agregarán a la lista de amigos. Conforme agregues nuevos amigos la lista se actualizará.
 
