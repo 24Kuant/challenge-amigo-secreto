@@ -35,7 +35,7 @@
           />
           <button class="button-add" onclick="agregarAmigo()">Añadir</button>
         </div>
-        <h4></h4>
+        <h4 id="mensaje-error"></h4>
         <ul
           id="listaAmigos"
           class="name-list"
@@ -43,11 +43,11 @@
           role="list"
         ></ul>
         <ul id="resultado" class="result-list" aria-live="polite"></ul>
-        <p></p>
+        <p id="mensaje-sorteado"></p>
         <div class="button-container">
           <button
             class="button-draw"
-            onclick="pintaAmigoSorteado()"
+            onclick="amigoSorteado()"
             aria-label="Sortear amigo secreto"
           >
             <img
@@ -55,6 +55,17 @@
               alt="Ícono para sortear"
             />
             Sortear amigo
+          </button>
+          <button
+            class="button-draw"
+            onclick="reiniciar()"
+            aria-label="Sortear amigo secreto"
+          >
+            <img
+              src="assets/play_circle_outline.png"
+              alt="Ícono para sortear"
+            />
+            Iniciar
           </button>
         </div>
       </section>
